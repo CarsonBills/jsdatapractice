@@ -215,7 +215,7 @@ function findHighAndLow(arr) {
 
 
 
-// w3 resource lvl 2
+// w3 resource level 2: Functions
 //1
 
 function reverseNum(num) {
@@ -273,3 +273,181 @@ function capitalizeWords2(str) {
 	return newArray.join(' ')
 }
 
+//6  
+
+function findLongestWord(str){
+	arr = str.split(' ')
+	var longestWord = arr[0]
+	for (i = 0; i < arr.length; i++) {
+		if (longestWord.length < arr[i].length) {
+			longestWord = arr[i]
+		}
+	}
+	return longestWord
+}
+
+//7
+
+function countVowels(string){
+	string.toLowerCase()
+	var vowelList = "aeiou"
+	var counter = 0;
+	for (i = 0; i < string.length; i++){
+		if (vowelList.indexOf(string[i]) !== -1) { // This is interesting way to determin vowel
+			counter ++
+		}
+	}
+	return counter;
+}
+
+// 7 again 
+
+function countVowels(string){
+	return string.match(/[aeiou]/gi).length; // "g" is global search "i" is case insensitive
+}
+
+//8 
+
+function determinePrime(int) {
+	if (int === 1) {
+		return "Not Prime."
+	} else if (int === 2) {
+		return "Prime."
+	} else {
+		for (i = 2; i < int; i++){
+			if (int % i === 0) {
+				return "Not Prime"
+			}
+		}
+		return "Prime."
+	} 
+}
+
+//9 
+
+function determineType(arg) {
+	if (typeof arg === "undefined"){
+		return "undefined"
+	} else {
+		return typeof arg
+	}
+}
+
+//10
+
+
+//11
+
+function secondHL(arr){
+	var sortedArr = arr.sort()
+	return "Second lowest: " + sortedArr[1] +
+	" Second Highest: " + sortedArr[sortedArr.length-2]
+}
+
+//12
+
+function numPerfect(num) { 
+	var divisors = []
+	var sum = 0
+	for (i = 0; i < num; i++) {
+		if (num % i === 0){
+			divisors.push(i)
+		}
+	}
+	for (j = 0; j < divisors.length; j++) {
+		sum += divisors[j]
+	}
+	if (sum === num) {
+		return "Perfect Number."
+	} else {
+		return "Not perfect Number."
+	}
+}
+
+//12 again  Without the Carson level for loops
+function numPerfect(num){
+	var sum = 0;
+	for (i = 1; i <= num/2; i++){
+		if (num % i === 0){
+			sum += i;
+		}
+	}
+	if (sum === num){
+		return "Perfect Number"
+	}
+	return "Not Perfect"
+}
+
+//13
+
+function findFactors(num){
+	var arr = []
+	for (i = num/2; i > 1; i--){
+		if (num % i === 0){
+			arr.push(i)
+		}
+	}
+	return arr.join(' ')
+}
+
+// 14
+
+function getChange(num, arr){
+	var coins = 0
+	while (coins < num) {
+		if (arr)
+	}
+}
+
+//15
+
+function powerUp(base, exponent){
+	var ans = 1
+	for (i = 1; i <= exponent; i++){
+		ans *= base
+	}
+	return ans
+}
+
+//16
+
+function uniqString(str){
+	uniq = ""
+	for (i = 0; i < str.length; i++){
+		if(uniq.indexOf(str[i]) === -1){
+			uniq += str[i]
+		}
+	}
+	return uniq
+}
+
+
+//17 
+
+function charTimes(str){
+	letters = new Object
+	for (i = 0; i < str.length; i++){
+		var x = str[i];
+		letters[x] = (isNaN(letters[x]) ? 1 : letters[x] + 1)
+	}
+	return letters
+}
+
+
+//18 
+
+function binarySearch(target, array){
+	var max = array.length-1;
+	var min = 0;
+	var guess;
+	while (max >= min){
+		guess = Math.floor((max+min)/2)
+		if (array[guess] === target){
+			return guess
+		} else if (array[guess] > target){
+			max = guess-1
+		} else {
+			min = guess+1
+		}
+	}
+}
