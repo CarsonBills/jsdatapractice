@@ -451,3 +451,114 @@ function binarySearch(target, array){
 		}
 	}
 }
+
+//19
+
+//20
+
+function returnRandomStr(int){
+	var str = ""
+	var charBank = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+	for (x = 0; x < int; x++){
+		str += charBank.charAt(Math.floor(Math.random() * charBank.length))
+	}
+	return str
+}
+
+//21
+
+function getSubsets(){
+
+}
+
+//22 
+
+function getNumOccurrences(str, letter){
+	var num = 0;
+	for (x = 0; x < str.length; x++){
+		if (str.charAt(x)===letter){
+			num++
+		}
+	}
+	return num
+}
+
+//23
+
+function firstUniq(str){
+	var array = str.split('');
+	var count = 0;
+	for (x = 0; x <= array.length; x++){
+		count = 0;
+		for(y = 0; y <= array.length; y++){
+			if (array[x] === array[y]){
+				count++
+			}
+		}
+		if (count < 2){
+			return array[x]
+		}
+	}
+}
+
+//24
+
+function bubbleSort(arr){
+	var length = arr.length;
+	var temp = ""
+	for (x = 0; x < length; x++){
+		for (y = 0; y<(length-x); y++){
+			if (arr[y] > arr[y-1]){
+				temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
+//25 
+
+function longestString(arr){
+	var longest = arr[0];
+	for (x = 0; x < arr.length; x++){
+		if (arr[x].length > longest.length){
+			longest = arr[x]
+		}
+	}
+	return longest
+}
+
+function secondlongestString(arr){
+	arr.sort(function(a, b){
+	  return b.length - a.length;
+	});
+return arr[1]
+}
+
+
+//26
+function longestUniqString(str){
+// http://stackoverflow.com/questions/9734474/find-longest-substring-without-repeating-characters
+}
+
+
+//27
+function longestPalindrome(){
+	
+}
+
+//29
+function test(){
+	console.log(arguments.callee.name)
+}
+
+
+
+
+
+
+
+
+
