@@ -546,7 +546,7 @@ function longestUniqString(str){
 
 //27
 function longestPalindrome(){
-	
+
 }
 
 //29
@@ -555,8 +555,22 @@ function test(){
 }
 
 
-
-
+function selectionSort(array){
+	for (x = 0; x < array.length-1; x++){
+		var min = x;
+		for (y = x+1; y < array.length; y++){
+			if (array[y] < array[min]){
+				min = y;
+			}
+		}
+		if (min != x){
+			var tmp = array[min];
+			array[min] = array[x];
+			array[x] = tmp;
+		}
+	}
+	return array
+}
 
 
 
