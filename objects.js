@@ -518,6 +518,22 @@ function bubbleSort(arr){
 	return arr
 }
 
+
+function bubbleSort(arr){
+	var length = arr.length
+	var temp = ""
+	for (x = 0; x < length; x++){
+		for(y = 0; y < length - x; y++){
+			if (arr[y] < arr[y-1]){
+				temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
 //25 
 
 function longestString(arr){
@@ -557,15 +573,15 @@ function test(){
 
 function selectionSort(array){
 	for (x = 0; x < array.length-1; x++){
-		var min = x;
+		var max = x;
 		for (y = x+1; y < array.length; y++){
-			if (array[y] < array[min]){
-				min = y;
+			if (array[y] > array[max]){
+				max = y;
 			}
 		}
-		if (min != x){
-			var tmp = array[min];
-			array[min] = array[x];
+		if (max != x){
+			var tmp = array[max];
+			array[max] = array[x];
 			array[x] = tmp;
 		}
 	}
@@ -573,6 +589,72 @@ function selectionSort(array){
 }
 
 
+function selectionSort(arr){
+	var length = arr.length;
+	for (x = 0; x<length-1; x++){
+		var min = x;
+		for (y = x+1; y<length; y++){
+			if (arr[y] > arr[min]){
+				min = y;
+			}
+		}
+		if (min != x) {
+				var temp = arr[x];
+				arr[x] = arr[min];
+				arr[min] = temp;
+		}
+	}
+	return arr
+}
+
+
+function printingRows(arr){
+	for (x = 0; x<arr.length; x++ ){
+		console.log("row "+x);
+		for (y = 0; y<arr[x].length; y++){
+			console.log(arr[x][y]);
+		}
+	}
+}
+
+function switchCase(str){
+	var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	var lower = "abcdefghijklmnopqrstuvwxyz"
+	var result = []
+	for (x = 0; x<str.length; x++){
+		console.log(upper.indexOf(str[x]))
+		if (upper.indexOf(str[x]) === -1 ){
+			result.push(str[x].toUpperCase());
+		} else {
+			result.push(str[x].toLowerCase());
+		}
+	}
+	return result.join('')
+}
+
+function returnUniq(str){
+	var result = "";
+	for (x = 0; x < str.length; x++){
+		if (result.indexOf(str[x]) === -1){
+			result += str[x]
+		}
+	}
+	return result
+}
+
+function colorArrays(colors, order){
+	for (x = 0; x < colors.length; x++){
+		if (x === 0){
+			console.log("1"+order[1]+" choice is "+ colors[x]);
+		} else if ( x === 1){
+			console.log("2"+order[2]+" choice is "+ colors[x]);
+		} else if ( x === 2){
+			console.log("3"+order[3]+" choice is "+ colors[x]);
+		} else {
+			console.log(x+1 + order[0] + " choice is "+ colors[x]);
+		}
+	}
+}
 
 
 
