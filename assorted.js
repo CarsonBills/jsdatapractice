@@ -669,10 +669,16 @@ function evenDash(num){
 	return result.join("")
 }
 
-function findMode(arr){
-	var obj = {};
-	for (x = 0; x < arr.length; x++){
-		if (obj)
+function insertionSort(arr){
+	var length = arr.length;
+	for (x = 0; x < length; x++){
+		var tmp = arr[x];
+		for (y = x - 1; y >= 0 && (arr[y] < tmp); y--){
+			arr[y+1] = arr[y]
+			console.log(x + " and " + y)
+		}
+		arr[y+1] = tmp;
 	}
+	return arr
 }
 
