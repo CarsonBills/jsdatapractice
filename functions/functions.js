@@ -142,7 +142,100 @@ function getFactors(num){
 		}
 	}
 	factors.sort(function (a, b){
-		return a - b
+		return a b
 	});
 	return factors
+}
+
+function getCoins(amount, coins){
+	if (amount === 0){
+		return [];
+	} else {
+		if (amount >= coins[0]){
+			left = (amount - coins[0]);
+			return [coins[0]].concat(getCoins(left, coins));
+		} else {
+			coins.shift();
+			return getCoins(amount, coins);
+		}
+	}
+}
+
+
+function getPower(base, exp){
+	return Math.pow(base, exp) //duh.
+}
+
+function getPowerAgain(base, exp){
+	var ans = 0;
+	for (x = 1; x <= exp; x++){
+		ans += (base * x)
+	}
+	return ans
+}
+
+function uniqueString(string){
+	var uniq = ""
+	for (x = 0; x < string.length; x++){
+		if (uniq.indexOf(string[x]) === -1) {
+			uniq += string[x]
+		}
+	}
+	return uniq
+}
+
+function numOccurences(string){
+	var ans = {}
+	for (x = 0; x < string.length; x++){
+		if (ans[string[x]] === undefined){
+			ans[string[x]] = 1;
+		} else {
+			ans[string[x]]++
+		}
+	}
+	return ans
+}
+
+function binarySearch(){
+
+}
+
+function getLargerNums(arr, elem){
+	var ans = []
+	for (x = 0; x < arr.length; x++){
+		if (arr[x] > elem){
+			ans.push(arr[x])
+		}
+	}
+	return ans
+}
+
+function filterLarger(val){
+	{
+		return function(evalue, index, array) {
+			console.log(array)
+			return (evalue >= val);
+		}
+	}
+}
+var result = [11,45,4,31,64,10].filter(filterLarger(8))
+
+
+function randomString(num){
+	var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	var res = ""
+	for (x = 1; x <= num; x++){
+		res += str[Math.floor(Math.random() * (str.length))]
+	}
+	return res
+}
+
+function getSubsets(len, arr){
+	var res = [];
+	for (x = 0; x < arr.length - len; x++){
+		for (y = x+len; y < arr.length; y++){
+			res.push(arr.slice(x, y))
+		}
+	}
+	return res
 }
