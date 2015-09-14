@@ -131,4 +131,18 @@ function checkPerfect(num){
 	return "not perfect number"
 }
 
-
+function getFactors(num){
+	var factors = []
+	for (x = 1; x <= Math.floor(Math.sqrt(num)); x++){
+		if (num % x === 0){
+			factors.push(x)
+			if (num/x !== x){
+				factors.push(num/x)
+			}
+		}
+	}
+	factors.sort(function (a, b){
+		return a - b
+	});
+	return factors
+}
