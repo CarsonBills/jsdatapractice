@@ -2,11 +2,14 @@ function insertionSort(arr){
 	var length = arr.length;
 	for (x = 0; x < length; x++){
 		var tmp = arr[x];
-		for (y = x - 1; y >= 0 && (arr[y] < tmp); y--){
+		for (y = x - 1; y >= 0 && (arr[y] > tmp); y--){
 			arr[y+1] = arr[y]
-			console.log(x + " and " + y)
 		}
 		arr[y+1] = tmp;
+		console.log(arr)
+		console.log(y)
+		console.log("---------------------")
+		console.log(arr[x] + "  and   " + arr[y])
 	}
 	return arr
 }
@@ -18,7 +21,7 @@ function selectionSort(arr){
 	for (x = 0; x<length-1; x++){
 		var min = x;
 		for (y = x+1; y<length; y++){
-			if (arr[y] > arr[min]){
+			if (arr[y] < arr[min]){
 				min = y;
 			}
 		}
@@ -76,6 +79,22 @@ function bubbleSort(arr){
 				arr[y-1] = temp;
 			}
 		}
+	}
+	return arr
+}
+
+
+
+
+function insertionSort(arr){
+	var length = arr.length;
+	for (x = length-1; x >= 0; x--){
+		var tmp = arr[x];
+		for (y = x + 1; y >= 0 && (arr[y] < tmp); y++){
+			arr[y-1] = arr[y];
+		}
+		arr[y-1] = tmp
+
 	}
 	return arr
 }

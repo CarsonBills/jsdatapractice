@@ -230,12 +230,70 @@ function randomString(num){
 	return res
 }
 
-function getSubsets(len, arr){
-	var res = [];
-	for (x = 0; x < arr.length - len; x++){
-		for (y = x+len; y < arr.length; y++){
-			res.push(arr.slice(x, y))
+function getSubsets(){ //check out bitwise operators
+	var fn = function(minLength, sourceArray, got, all){
+		if (n == 0){
+			if (got.length > 0){
+				all[all.length] = got;
+			}
+			return;
+		}
+		for (var x = 0; x < src.length; x++){
+
 		}
 	}
-	return res
+}
+
+function countLetter(letter, str){
+	var arr = str.split('')
+	var count = 0;
+	for (x = 0; x < arr.length; x++){
+		if (arr[x] === letter){
+			count++
+		}
+	}
+	return count
+}
+
+function firstNonRepeat(str){
+	var count
+	var result = ""
+	for (x = 0; x < str.length; x++){
+		count = 0;
+		for (y = 0; y < str.length; y++){
+			if (str[x] === str[y]){
+				count++
+			}
+		}
+		if (count < 2){
+			result = str[x];
+		}
+	}
+	return result
+}	
+
+function bubbleSort(arr){
+	for (x = 0; x < arr.length; x++){
+		for (y = 0 ; y< arr.length-x; y++){
+			if (arr[y] < arr[y-1]){
+				var temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
+function babbleSort(arr){
+	for (x = 0; x < arr.length; x++){
+		for ( y = 0; y < arr.length - x; y++){
+			if (arr[y] < arr[y-1]){
+				var temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
 }
