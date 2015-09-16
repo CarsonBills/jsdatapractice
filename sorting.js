@@ -112,3 +112,27 @@ function bbbbbleSort(arr){
 	}
 	return arr
 }
+
+function allSortsOfSorts(arr){
+	for (s = 0; s < arr.length-1; s++){
+		var max = s;
+		for (t = s+1; t < arr.length; t++){
+			if (arr[t] > arr[max]){
+				max = t;
+			}
+		}
+		if (max !== s){
+			var temp = arr[s];
+			arr[s] = arr[max];
+			arr[max] = temp;
+		}
+	}
+	return arr
+}
+
+
+
+
+
+
+
