@@ -297,3 +297,32 @@ function babbleSort(arr){
 	}
 	return arr
 }
+
+function longestString(arr){
+	var longest = ""
+	for (x = 0; x < arr.length; x++){
+		if (arr[x].length > longest.length){
+			longest = arr[x];
+		}
+	}
+	return longest
+}
+
+function longestUniqueSubstring(str){
+	var longestSoFar = ""
+	var currentString = ""
+	for (x = 0; x < str.length; x++){
+		if (currentString.indexOf(str[x]) === -1 ){
+			currentString += str[x]
+			if (longestSoFar.length < currentString.length){
+				longestSoFar = currentString;
+				console.log(longestSoFar)
+			}
+		} else {
+			currentString = ""
+		}
+	}
+	return longestSoFar;
+}
+
+
