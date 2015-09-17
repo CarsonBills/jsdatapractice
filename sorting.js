@@ -132,7 +132,22 @@ function allSortsOfSorts(arr){
 
 
 
-
+function sortingSorts(arr){
+	for (x = 0; x < arr.length - 1; x++){
+		var max = x;
+		for (y = x + 1; y < arr.length; y++){
+			if (arr[max] > arr[y]){
+				max = y;
+			}
+		}
+		if (max !== x) {
+			var temp = arr[max];
+			arr[max] = arr[x];
+			arr[x] = temp;
+		}
+	}
+	return arr
+}
 
 
 
