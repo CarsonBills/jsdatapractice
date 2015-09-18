@@ -682,3 +682,39 @@ function insertionSort(arr){
 	return arr
 }
 
+
+
+function removeDuplicateChars(input) {
+    var string = input.replace(/\W/g, "");
+    var uniq = "";
+    for (x = 0; x < string.length; x++){
+        if (uniq.indexOf(string[x]) === -1){
+            uniq += string[x];
+        }
+    }
+    return uniq;
+ }
+
+
+function TimeButton(){
+	var button = document.getElementsByTagName('button')[0];
+
+	var increment = function () {
+	    var count = this.getElementsByTagName("span")[0].innerHTML;
+	    console.log(count);
+	    count++
+	    if (count === 1 ){
+	       this.innerHTML = "I've been clicked <span>" +  count + "</span> time"
+	    } else {
+	        this.innerHTML = "I've been clicked <span>" +  count + "</span> times"
+	    }
+	    var newButton = document.createElement("button");
+	    newButton.innerHTML ="I've been clicked <span> 0 </span> times"
+	 	document.body.appendChild(newButton);
+	    newButton.addEventListener("click", increment, false);
+	}
+
+	button.addEventListener("click", increment, false)
+	
+}
+

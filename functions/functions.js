@@ -326,3 +326,26 @@ function longestUniqueSubstring(str){
 }
 
 
+
+function removeDuplicateChars(input) {
+    
+    var uniq = "";
+    var arr = input.toLowerCase().split(' ')
+    for (x = 0; x < arr.length; x++){
+        if (uniq.indexOf(arr[x]) === -1){
+            uniq += arr[x];
+        }
+        return arr.join('')
+    }
+}
+
+function uniqueString(string){
+	var uniq = ""
+	for (x = 0; x < string.length; x++){
+		if (uniq.indexOf(string[x]) === -1) {
+			uniq += string[x]
+		}
+	}
+	return uniq
+}
+
