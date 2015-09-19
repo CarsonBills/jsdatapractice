@@ -1,5 +1,8 @@
-function twoVariables(){
-	for (x = 0, y = 4; x < 5; x++, y--){
-		console.log("X is " + x + "     " + "Y is " + y)
+function factorial(num){
+	var result = num;
+	for(x = num - 1; x > 0; x--){
+		result *= x
+		console.log(result);
 	}
+	return result;
 }
