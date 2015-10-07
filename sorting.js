@@ -191,3 +191,43 @@ function insfrtonSot(arr){
 	return arr
 }
 
+function bbbbbbble(arr){
+	for (x = 0; x < arr.length; x++){
+		for (y = 0; y < arr.length; y++){
+			if (arr[y] > arr[y+1]){
+				var temp = arr[y];
+				arr[y] = arr[y+1];
+				arr[y+1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
+function selectsort(arr){
+	for (x = 0; x < arr.length-1; x++){
+		var max = x;
+		for (y = x+1; y < arr.length; y++){
+			if (arr[y] > arr[max]){
+				max = y;
+			}
+		}
+		if (max != x){
+			var temp = arr[x];
+			arr[x] = arr[max];
+			arr[max] = temp;
+		}
+	}
+	return arr
+}
+
+function inserSort(arr){
+	for (x = 0; x < arr.length; x++){
+		var temp = arr[x];
+		for (y = x - 1; y >= 0 && (arr[y] > temp); y--){
+			arr[y + 1] = arr[y];
+		}
+		arr[y + 1] = temp;
+	}
+	return arr
+}
