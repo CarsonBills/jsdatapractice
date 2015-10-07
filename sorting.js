@@ -1,15 +1,11 @@
+
 function insertionSort(arr){
-	var length = arr.length;
-	for (x = 0; x < length; x++){
-		var tmp = arr[x];
-		for (y = x - 1; y >= 0 && (arr[y] > tmp); y--){
-			arr[y+1] = arr[y]
+	for (x = 0; x < arr.length; x++){
+		var temp = arr[x];
+		for (y = x - 1; y >= 0 && (arr[y] > temp); y--){
+			arr[y + 1] = arr[y]
 		}
-		arr[y+1] = tmp;
-		console.log(arr)
-		console.log(y)
-		console.log("---------------------")
-		console.log(arr[x] + "  and   " + arr[y])
+		arr[y + 1] = temp;
 	}
 	return arr
 }
@@ -150,4 +146,48 @@ function sortingSorts(arr){
 }
 
 
+//Shellsort : 
+//  https://www.youtube.com/watch?v=qzXAVXddcPU
+
+
+function bubbleSort(arr){
+	for (x = 0; x < arr.length; x++){
+		for (y = 0; y < (arr.length - x); y++){
+			if (arr[y-1] > arr[y]){
+				var temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
+function sleectionSeot(a){
+	for (x = 0; x < a.length-1; x++){
+		var min = x;
+		for (y = x+1; y < a.length; y++){
+			if (a[min] > a[y]){
+				min = y;
+			}
+		}
+		if (min != x){
+			var temp = a[min];
+			a[min] = a[x];
+			a[x] = temp;
+		}
+	}
+	return a
+}
+
+function insfrtonSot(arr){
+	for (x = 0; x < arr.length; x++){
+		var tmp = arr[x];
+		for (y = x - 1; y >= 0 && (arr[y] > tmp); y--){
+			arr[y+1] = arr[y]
+		}
+		arr[y + 1] = tmp;
+	}
+	return arr
+}
 

@@ -314,7 +314,7 @@ function longestUniqueSubstring(str){
 	for (x = 0; x < str.length; x++){
 		if (currentString.indexOf(str[x]) === -1 ){
 			currentString += str[x]
-			if (longestSoFar.length < currentString.length){
+			if (currentString.length > longestSoFar.length){
 				longestSoFar = currentString;
 				console.log(longestSoFar)
 			}
