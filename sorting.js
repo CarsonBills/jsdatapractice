@@ -231,3 +231,41 @@ function inserSort(arr){
 	}
 	return arr
 }
+
+function shellSort(){
+
+}
+
+function quickSort(){
+	
+}
+
+function bsort(arr){
+	for (x = 0; x < arr.length; x++){
+		for (y = 0; y < (arr.length-x); y++){
+			if (arr[y-1] < arr[y]){
+				var temp = arr[y];
+				arr[y] = arr[y-1];
+				arr[y-1] = temp;
+			}
+		}
+	}
+	return arr
+}
+
+function insertSort(arr){ // least to greatest
+	for (x = 0; x < arr.length; x++){
+		var temp = arr[x];
+		for  (y = x-1; y >= 0 && (arr[y] > temp); y--){
+			console.log(arr[y] + "  -  Array[y] ")
+			console.log(arr[y+1] + "  - Array[y+1]")
+			console.log(temp + "  -   Array[x]")
+			arr[y+1] = arr[y] // shift arr[y] up one level
+			console.log(arr + "  -  ARRAY")
+		}
+		arr[y+1] = temp  // if second for loop is not triggered these values are already the same
+		console.log(arr[y+1] + "" + temp)
+		console.log(arr + "  -  ARRAY AT END")
+	}
+	return arr
+}

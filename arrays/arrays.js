@@ -60,3 +60,19 @@ function getMostFreq(arr){
 	}
 	return "The most common element is " + maxEl + ". It appeared " + maxCount + " times."
 }
+
+function removeFalsy(arr){  //when needing to delete items in array during iteration, go backwards
+	var length = arr.length
+	for (x = length; x >= 0; x--){
+		if (!!arr[x] === false) {
+			arr.splice(x, 1);
+		}
+	}
+	return arr
+}
+
+
+
+
+
+
