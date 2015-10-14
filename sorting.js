@@ -259,11 +259,12 @@ function insertSort(arr){ // least to greatest
 		for  (y = x-1; y >= 0 && (arr[y] > temp); y--){
 			console.log(arr[y] + "  -  Array[y] ")
 			console.log(arr[y+1] + "  - Array[y+1]")
-			console.log(temp + "  -   Array[x]")
+			console.log(temp + "  -   Array[x] and temp")
 			arr[y+1] = arr[y] // shift arr[y] up one level
 			console.log(arr + "  -  ARRAY")
 		}
 		arr[y+1] = temp  // if second for loop is not triggered these values are already the same
+		console.log(y + "WHAT IS THIS VALUE")
 		console.log(arr[y+1] + "" + temp)
 		console.log(arr + "  -  ARRAY AT END")
 	}
