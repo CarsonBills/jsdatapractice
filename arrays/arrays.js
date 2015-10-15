@@ -71,8 +71,19 @@ function removeFalsy(arr){  //when needing to delete items in array during itera
 	return arr
 }
 
-
-
-
-
+function unionArr(arr1, arr2){
+	arr3 = arr1;
+	while (arr2.length > 0){
+		var x = arr3.length-1;
+		console.log("loop    " + arr2.length)
+		if (arr3[x] <= arr2[0]){
+			arr3.splice(x+1, 0, arr2.shift()) 
+			console.log("if   " + arr2.length)
+		} else if (x === 0){
+			arr3.splice(0, 0, arr2.shift());
+		}
+			x--
+	}
+	return arr3
+}
 
