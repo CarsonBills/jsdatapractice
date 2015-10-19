@@ -257,9 +257,6 @@ function insertSort(arr){ // least to greatest
 	for (x = 0; x < arr.length; x++){
 		var temp = arr[x];
 		for  (y = x-1; y >= 0 && (arr[y] > temp); y--){
-			console.log(arr[y] + "  -  Array[y] ")
-			console.log(arr[y+1] + "  - Array[y+1]")
-			console.log(temp + "  -   Array[x] and temp")
 			arr[y+1] = arr[y] // shift arr[y] up one level
 			console.log(arr + "  -  ARRAY")
 		}
